@@ -16,11 +16,11 @@ import { Bank } from 'src/entity/bank.entity';
     imports: [
         TypeOrmModule.forRoot({
           type: 'mysql',
-          host: 'localhost',
+          host: 'boeu8hvoi5q1q4wyoase-mysql.services.clever-cloud.com',
           port: 3306,
-          username: 'julio',
-          password: '120786',
-          database: 'pagos',
+          username: 'ukr8e6mcmkilza1u',
+          password: 'oQTd5VNutRFvSqQbml3A',
+          database: 'boeu8hvoi5q1q4wyoase',
           entities: [User,Payment,SyncLog,Transaction,Aportacion,Pais,Transferencia,Usuario,RegistroToken,Validacion,Bank],
           synchronize: true,
         }),
