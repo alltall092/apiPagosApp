@@ -31,4 +31,13 @@ export class TransferenciaService {
 
 
         }
+        async getTransferencia():Promise<Transferencia[]>{
+try {
+    const transfer=await this.repository.find();
+    return transfer;
+} catch (error) {
+    throw error;
+}
+
+        }
 }

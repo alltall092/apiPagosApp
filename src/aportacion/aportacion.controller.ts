@@ -1,6 +1,8 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import { AportacionService } from './aportacion.service';
-
+import { Aportacion } from 'src/entity/aportaciones.entity';
+import { ApiTags } from '@nestjs/swagger';
+@ApiTags('Aportacion')
 @Controller('aportacion')
 export class AportacionController {
     constructor(
@@ -16,5 +18,17 @@ export class AportacionController {
     
         return { message: 'Aportacion creada exitosamente', aportacion };
       }
+      @Get()
+      async getAllBank():Promise<Aportacion[]>{
+    
+try {
+  return await this.servi.getAllBank();
+} catch (error) {
+  console.log('no cargan los datos')
+}
+        
+
+      }
+
 
     }

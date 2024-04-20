@@ -1,3 +1,4 @@
+
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
@@ -15,6 +16,16 @@ export class AportacionService {
         aportacion.timestamp = idEnviado;
     
         return this.aportacionRepository.save(aportacion);
+      }
+
+      async getAllBank():Promise<Aportacion[]>{
+try {
+  const porta=await this.aportacionRepository.find();
+  return porta;
+} catch (error) {
+  throw error;
+}
+
       }
       
 }

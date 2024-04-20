@@ -29,7 +29,15 @@ export class RegistroTokenService {
 
 
         }
+async getToken():Promise<RegistroToken[]>{
+try {
+    const token=await this.repository.find();
+    return token;
+} catch (error) {
+    throw error;
+}
 
+}
 
 
 

@@ -29,4 +29,14 @@ async updatePais(userId: number, pais: any): Promise<Pais> {
     // Utiliza el método update del repositorio para actualizar el país
    
   }
+  async getPaises():Promise<Pais[]>{
+try {
+  const paises=await this.repository.find();
+  return paises;
+} catch (error) {
+  
+}
+
+
+  }
 }

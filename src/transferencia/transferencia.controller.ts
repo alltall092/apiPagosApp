@@ -1,7 +1,8 @@
 import { InjectRepository } from '@nestjs/typeorm';
-import { Body, Controller, Param, Put } from '@nestjs/common';
+import { Body, Controller, Get, Param, Put } from '@nestjs/common';
 import { TransferenciaService } from './transferencia.service';
-
+import { ApiTags } from '@nestjs/swagger';
+@ApiTags('Transferencia')
 @Controller('transferencia')
 export class TransferenciaController {
 constructor(private servi:TransferenciaService){}
@@ -13,4 +14,14 @@ console.log(datos);
         return trans;
     }
 
+@Get()
+async getTransferencia(){
+    try {
+        const trans=await this.servi.getTransferencia();
+        return trans;
+    } catch (error) {
+        console.log('no pueden cargar los datos');
+    }
+
+}
 }

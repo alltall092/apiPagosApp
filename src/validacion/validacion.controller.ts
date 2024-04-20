@@ -1,4 +1,4 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import { ValidacionService } from './validacion.service';
 import { ApiTags } from '@nestjs/swagger';
 @ApiTags('Validacion')
@@ -11,5 +11,11 @@ export class ValidacionController {
      const valid=this.servi.postValidacion(datos);
      return valid;   
 
+    }
+
+    @Get()
+    getValidacion(){
+        const valid=this.servi.getValidacion();
+        return valid;
     }
 }

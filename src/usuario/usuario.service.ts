@@ -32,6 +32,25 @@ export class UsuarioService {
 
         }
 
+async getUser():Promise<Usuario[]>{
+try {
+    const user=await this.repository.find();
+    return user;
+} catch (error) {
+    throw error;
+}
 
 
+}
+async getByUser(userId:number){ 
+try {
+    const id=userId;
+    const user=await this.repository.findOne({where:{id}});
+    return user;
+} catch (error) {
+    throw error;
+}
+
+
+}
 }

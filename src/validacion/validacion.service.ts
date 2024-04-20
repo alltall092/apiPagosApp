@@ -15,4 +15,14 @@ return this.repository.save(valid);
 
 
 }
+async getValidacion():Promise<Validacion[]>{
+    try {
+        return this.repository.find(); 
+    } catch (error) {
+        throw error;
+        
+    }
+
+
+}
 }
