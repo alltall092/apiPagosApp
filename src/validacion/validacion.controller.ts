@@ -12,6 +12,7 @@ export class ValidacionController {
      return valid;   
 
     }
+    // prueba de pagos
 
     @Get()
     getValidacion(){
